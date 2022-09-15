@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -19,7 +18,7 @@ void more_numbers(void)
 			{
 				_putchar((n2 / 10) + '0');
 			}
-			-putchar((n2 % 10) + '0');
+			_putchar((n2 % 10) + '0');
 		}
 		_putchar(10);
 	}
