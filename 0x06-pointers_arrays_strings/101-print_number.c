@@ -1,37 +1,38 @@
 #include "main.h"
 
 /**
- * print_number - function that prints an integer
- *
- * @n: int type var
- *
- * Return: Nothing
- */
+*print_number - prints an integer.
+*
+*@n: integer
+*
+*Return: void
+*/
 
 void print_number(int n)
 {
-	int adjustor, sign;
+	unsigned int m, d, count;
 
-	adjustor = 1000000000;
-	sign = 1;
-	if (n > 0)
+	if (n < 0)
 	{
-		n = n * -1;
-		sign = sign * -1;
-	}
-	if (n != 0)
-	{
-		while (n / adjustor == 0)
-			adjustor = adjustor / 10;
-		if (sign == 1)
-			_putchar('-');
-		while (adjustor >= 1)
-		{
-			_putchar(-(n / adjustor) + '0');
-			n = n % adjustor;
-			adjustor = adjustor / 10;
-		}
+		_putchar(45);
+		m = n * -1;
 	}
 	else
-		_putchar('0');
+	{
+		m = n;
+	}
+
+	d = m;
+	count = 1;
+
+	while (d > 9)
+	{
+		d /= 10;
+		count *= 10;
+	}
+
+	for (; count >= 1; count /= 10)
+	{
+		_putchar(((m / count) % 10) + 48);
+	}
 }
